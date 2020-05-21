@@ -2,6 +2,8 @@
 
 Memory-Aware Second-Order Random Walk
 
+We have int version for small, weighted and directed graphs, long long version for large, unweighted and undirected graphs.
+
 ## Usage
 
 Compile example:
@@ -18,7 +20,21 @@ Excution example:
 
 ## Dataset format
 
-### Graph
+### Graph for Int Version
+
+The graph is weighted and directed.
+
+Format of binary file:
+
+number of nodes (long long), number of edges (long long),
+
+offsets of each node (array of int, the 1st is 0, 2nd is #neighbors of node 1, 3rd is sum of #neighbors of node 1&2, ..., length equals number of nodes),
+
+neighbors of each node (arrays of int32, length of each array equals node degree, neighbors' ids in ascending order),
+
+weights of each edge (array of float, corresponding to the neighbors list)
+
+### Graph for Long Long version
 
 The graph must be unweighted and undirected with edges for both directions.
 
@@ -28,7 +44,7 @@ number of nodes (long long), number of edges (long long),
 
 offsets of each node (array of long long, the 1st is 0, 2nd is #neighbors of node 1, 3rd is sum of #neighbors of node 1&2, ..., length equals number of nodes),
 
-neighbors of each node (array of int32, length equals number of edges)
+neighbors of each node (array of int32, length of each array equals node degree, neighbors' ids in ascending order)
 
 ### Start points of auto regression
 
