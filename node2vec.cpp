@@ -457,7 +457,7 @@ int main(int argc, char **argv) {
     return 1;
 
   node_fac_const = max(1.0, 1.0 / p);
-  node_fac_const = max(1.0, 1.0 / q);
+  node_fac_const = max(node_fac_const, 1.0 / q);
 
   // ADD memorychange
   if ((a = ArgPos(const_cast<char *>("-memorychange"), argc, argv)) > 0) {
